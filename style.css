@@ -1,21 +1,297 @@
 /* style.css */
 
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap');
+
 body {
-  background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   color: #333;
-  text-align: center;
+  line-height: 1.6;
   margin: 0;
-  padding: 20px;
+  padding: 40px;
+  padding-top: 60px; /* Add top padding to account for fixed navbar */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
 }
 
 h1 {
-  color: #007acc;
-  font-size: 36px;
-  margin-bottom: 10px;
+  color: #2c3e50;
+  font-size: 3rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 p {
-  font-size: 18px;
+  font-size: 1.1rem;
+  line-height: 1.8;
   color: #555;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.top-nav {
+  background-color: #2c3e50;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.top-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.top-nav li {
+  margin: 0 15px;
+}
+
+.top-nav a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.top-nav a:hover {
+  color: #3498db;
+}
+
+#home {
+  text-align: center;
+  padding: 100px 0;
+}
+
+#home h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+#home p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #34495e;
+  margin-bottom: 30px;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.3px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Scroll to top button */
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  transition: background-color 0.3s;
+}
+
+#scroll-to-top:hover {
+  background-color: #34495e;
+}
+
+/* Dark mode toggle */
+#dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode #home h1,
+body.dark-mode #home p {
+  color: #61dafb;
+}
+
+body.dark-mode p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .top-nav {
+  background-color: #2c3e50;
+}
+
+body.dark-mode .top-nav a {
+  color: #ffffff;
+}
+
+body.dark-mode .top-nav a:hover {
+  color: #61dafb;
+}
+
+body.dark-mode #projects li {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+body.dark-mode #contact-form input,
+body.dark-mode #contact-form textarea {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: #4a4a4a;
+}
+
+body.dark-mode #contact-form button {
+  background-color: #61dafb;
+  color: #1a1a1a;
+}
+
+body.dark-mode #contact-form button:hover {
+  background-color: #4fa8d5;
+}
+
+/* Parallax effect for home section */
+#home {
+  background-image: url('https://source.unsplash.com/random/1600x900');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Improved project items */
+#projects li {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#projects li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Improved form styling */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#contact-form label {
+  margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#contact-form button {
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: #34495e;
+}
+
+/* Update home section styles for dark mode */
+body.dark-mode #home {
+  color: #61dafb;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode #home h1,
+body.dark-mode #home p {
+  color: #61dafb;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.profile-text {
+  text-align: left;
+}
+
+#home h1 {
+  margin-bottom: 10px;
+}
+
+#home p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-text {
+    text-align: center;
+  }
 }

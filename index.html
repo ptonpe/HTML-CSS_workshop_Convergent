@@ -1,19 +1,78 @@
-<html>
+<html lang="en">
 
 <head>
-  <title>My Personal Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name - Personal Website</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
+  <header>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h1>Hello World!</h1>
-  
-  <p>This is my first web page!</p>
-  
-  <button onclick="changeText()">Click me!</button>
-  
+  <main>
+    <section id="home">
+      <div class="profile-container">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQGC3VlOvrn5pA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696021181292?e=1734566400&v=beta&t=tF1xymIX0aFrP_hWt_im9XTMN0WyoHlbBZuY1hnHcY0" alt="Pranav Tonpe" class="profile-picture">
+        <div class="profile-text">
+          <h1>Pranav Tonpe</h1>
+          <p>Sophomore at UT Austin</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hi! My name is Pranav but most people call me PT for short. I was born and raised for part of my life in the Pacific Northwest in Portland so I have been accustomed to cloudy/rainy days and outdoors activities. I am a huge fan of backpacking, hiking, visiting national parks, mountain biking, and just about any other thing nature-related. I moved to Texas back in 2011 where I really began exploring my passions. Throughout high school, I became invested in E-commerce and online branding taking inspiration from my older sister who pursued marketing and graphic design. I took a more technical approach to learning about branding and how it applies to social media.</p>
+    </section>
+
+    <section id="projects">
+      <h2>My Projects</h2>
+      <ul>
+        <li>
+          <h3>YOLO Object Detection</h3>
+          <p>• Examined object detection in autonomous vehicles using CIFAR-10 by utilizing convolutional neural networks</p>
+          <p>• Conceptualized findings using data visualization libraries evaluating 88% accuracy compared to existing LiDAR models</p>
+        </li>
+        <li>
+          <h3>Online Shopping Predictor</h3>
+          <p>• Constructed an online shopping prediction app that correctly identified over 80% of users’ purchasing intents</p>
+          <p>• Quantified Google Analytics website data such as bounce rates and exit rates to assess consumer behavior          </p>
+          <p>• Upscaled the testing dataset achieving over 4000 correct purchase predictions and a 90% true negative rate</p>
+
+        </li>
+        <!-- Add more projects as needed -->
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+ 
 </body>
 
 </html>
